@@ -7,6 +7,15 @@
         $('#block_menu')[0].style.position = '';
         $('#block_menu')[0].style.top = '';
         $('#block_menu')[0].style.left = '';
+
+        // remove dumb paragraphs
+        var parags = $('#block_menu p')
+        if (parags[3]) {
+            parags[3].parentNode.removeChild(parags[3]);
+        }
+        if (parags[2]) {
+            parags[2].parentNode.removeChild(parags[2]);
+        }
         
     }
 

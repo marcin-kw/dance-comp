@@ -20,15 +20,26 @@
 
 /* Styling the table rows */
 #ihl-heats-table td {
-    padding: 10px 20px;
-    border-bottom: 1px solid #dddddd;
+    padding: 2px 20px;
+    
+}
+/* Styling the table rows */
+#ihl-heats-table tr.heat-first-row td {
+    border-top: 2px solid #dddddd;
+: 50px;
+    
 }
 
-
+#ihl-heats-table td:nth-child(1) {
+    #max-width: 4em;  /* Adjust as needed */
+}
 #ihl-heats-table td:nth-child(2) {
     word-wrap: break-word;
-    max-width: 150px;  /* Adjust as needed */
+    max-width: 20em;  /* Adjust as needed */
     overflow-wrap: break-word;
+}
+#ihl-heats-table td:nth-child(3) {
+    max-width: 10em;  /* Adjust as needed */
 }
 
 #block_menu {

@@ -35,13 +35,13 @@
 }
 #ihl-heats-table td:nth-child(2) {
     word-wrap: break-word;
-    max-width: 20em;  /* Adjust as needed */
+    #max-width: 20em;  /* Adjust as needed */
     overflow-wrap: break-word;
 }
 #ihl-heats-table td:nth-child(3) {
-    max-width: 10em;  /* Adjust as needed */
+    #max-width: 10em;  /* Adjust as needed */
 }
 
 #block_menu {
-    width: 80%;
+    width: 100%;
 }

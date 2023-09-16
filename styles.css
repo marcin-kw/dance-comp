@@ -1,0 +1,41 @@
+/* Base styles for the table */
+#ihl-heats-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif; /* Change this to your desired font family */
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling the table header */
+#ihl-heats-table thead {
+    background-color: #009879; /* Change this color if you prefer a different one */
+    color: white;
+    text-align: left;
+}
+
+#ihl-heats-table thead th {
+    padding: 10px 20px;
+}
+
+/* Styling the table rows */
+#ihl-heats-table tbody td {
+    padding: 10px 20px;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Adding a hover effect to the rows */
+#ihl-heats-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Styling the last row to remove the bottom border */
+#ihl-heats-table tbody tr:last-of-type {
+    border-bottom: none;
+}
+
+#ihl-heats-table td:nth-child(2) {
+    word-wrap: break-word;
+    max-width: 150px;  /* Adjust as needed */
+    overflow-wrap: break-word;
+}

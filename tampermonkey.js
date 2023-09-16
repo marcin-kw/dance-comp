@@ -210,10 +210,7 @@
             console.log('Done building heat list');
         }
 
-    (async () => {
-        await import('https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
-        // Library ready
-        console.log(jQuery)
+    function initialize() {
 
         var blockMenu = document.getElementById('block_menu');
 
@@ -266,6 +263,17 @@
             console.log(this.appendChild(newTd));
         })
 
-    })();
+    };
+
+    var checkElementInterval = setInterval(function() {
+        var element = document.getElementById("block_menu");
+
+        if (element) {
+            console.log("Element is now in the DOM!");
+            clearInterval(checkElementInterval);  // Stop the interval once the element is found
+            initialize();
+            // Additional code to run after the element is found can be added here
+        }
+    }, 250);  // Polling every 250 milliseconds. Adjust as needed.
 
 })();

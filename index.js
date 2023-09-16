@@ -4,6 +4,10 @@
     function showContent() {
         document.getElementById('LoadMessage').style.display = 'none';
         $('#block_menu')[0].style.visibility = 'visible';
+        $('#block_menu')[0].style.position = '';
+        $('#block_menu')[0].style.top = '';
+        $('#block_menu')[0].style.left = '';
+        
     }
 
     // Your code here...

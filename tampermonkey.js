@@ -49,18 +49,17 @@
     }
 
     function switchToHeats() {
-        var heatsTable = document.getElementById('ihl-heats-table');
+        $('ihl-heats-table').show();
 
-        heatsTable.style.display = 'block';
         var peopleTable = $('#block_menu table')[2];
-        peopleTable.style.display = 'none';
+        $(peopleTable).hide();
     }
+    
     function switchToPeople() {
-        var heatsTable = document.getElementById('ihl-heats-table');
+        $('ihl-heats-table').hide();
 
-        heatsTable.style.display = 'none';
         var peopleTable = $('#block_menu table')[2];
-        peopleTable.style.display = 'block';
+        $(peopleTable).show();
     }
 
     var selected = {};

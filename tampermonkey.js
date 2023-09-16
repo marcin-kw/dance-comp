@@ -49,14 +49,14 @@
     }
 
     function switchToHeats() {
-        $('ihl-heats-table').show();
+        $('#ihl-heats-table').show();
 
         var peopleTable = $('#block_menu table')[2];
         $(peopleTable).hide();
     }
     
     function switchToPeople() {
-        $('ihl-heats-table').hide();
+        $('#ihl-heats-table').hide();
 
         var peopleTable = $('#block_menu table')[2];
         $(peopleTable).show();
@@ -120,13 +120,6 @@
 
     function buildHeatList() {
             console.log('building');
-            //var h = new Heat('heat 1', '6pm', 'Silver Latin Senio 1');
-            //var h2 = new Heat('heat 1', '6pm', 'Silver Latin Senio 1');
-            //heatSet.add(h);
-            //heatSet.add(h2);
-            //console.log('how many : ' + heatSet.size);
-            //h.couples.push(new Couple('andy a', 'betty b'));
-            //h.containsPerson('charlie c');
 
             $('div').each(function (index, element) {
                 if (element.id.startsWith('TABLE_CODE_')) {
@@ -181,7 +174,7 @@
             // print
             console.log('printing');
             var heatList = Object.values(heats);
-            console.log(heatList[0]);
+
             heatList.sort(function (a, b) {
                 [a, b] = [parseInt(a.number.split(" ")[1]), parseInt(b.number.split(" ")[1])];
                 //console.log(a + ' ?< ' + b);
@@ -192,7 +185,6 @@
                 for (const person of Object.keys(selected)) {
                     if (heat.containsPerson(person)) {
                         interestingHeats.add(heat);
-                        console.log(heat.number + " is interesting");
                     }
                 }
 
@@ -204,6 +196,7 @@
 
                 //console.log(heat);
             }
+            $(heatTable).hide();
             var oldTable = document.getElementById('ihl-heats-table');
             oldTable.replaceWith(heatTable);
             console.log('Done building heat list');
@@ -255,11 +248,10 @@
             var newTd = document.createElement('td');
             var newButton = document.createElement('button');
             $(newButton).on('click', {dancerName: dancerName}, selectDancer);
-            console.log(this.text);
+            
             newButton.textContent = 'select';
-            //newButton.textContent = this.childNodes[0].textContent;
             newTd.appendChild(newButton);
-            console.log(this.appendChild(newTd));
+            this.appendChild(newTd);
         })
 
     };

@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         Improved HeatList
+// @name         WIP - Improve Dance Comp
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  try to take over the world!
 // @author       You
-// @match        http://www.comp-mngr.com/*_HeatLists.htm
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=comp-mngr.com
+// @match        https://marcin-kw.github.io/dance-comp/
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=github.io
 // @grant        none
 // ==/UserScript==
 
@@ -99,15 +99,19 @@
             var td1 = document.createElement('td');
             var td2 = document.createElement('td');
             var td3 = document.createElement('td');
-            row.appendChild(td1);
-            row.appendChild(td2);
-            row.appendChild(td3);
+
 
             if (firstRow) {
                 td1.textContent = heat.number;
+                td1.setAttribute("rowspan", couples.length);
+                row.classList.add("heat-first-row");
                 td2.textContent = heat.name;
+                td2.setAttribute("rowspan", couples.length);
+                row.appendChild(td1);
+                row.appendChild(td2);
             }
             td3.textContent = couple.canonical;
+            row.appendChild(td3);
 
             result.push(row);
             firstRow = false;
@@ -218,17 +222,21 @@
         blockMenu.insertBefore(heatsTable, blockMenu.firstChild);
 
         var selectElem = document.createElement('td');
-        selectElem.textContent = 'select dancers';
-        $(selectElem).on('click', {}, switchToPeople);
+        var selectButton = document.createElement('button');
+        selectButton.textContent = 'Select dancers';
+        $(selectButton).on('click', {}, switchToPeople);
         var heatsElem = document.createElement('td');
-        heatsElem.textContent = 'see heats';
-        $(heatsElem).on('click', {}, switchToHeats);
+        var heatsButton = document.createElement('button');
+        heatsButton.textContent = 'See heats';
+        $(heatsButton).on('click', {}, switchToHeats);
 
         var topTable = document.createElement('table');
         topTable.id = 'ihl-top-table';
         topTable.appendChild(selectElem);
+        selectElem.appendChild(selectButton);
         topTable.appendChild(heatsElem);
-        
+        heatsElem.appendChild(heatsButton);
+
         blockMenu.insertBefore(topTable, blockMenu.firstChild);
 
 

@@ -1,4 +1,4 @@
-faes (function() {
+(function() {
     'use strict';
 
     function showContent() {

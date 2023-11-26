@@ -28,8 +28,15 @@
         showContent();
     }
 
+    var compString = 'SilverBall2023'; // default to a previous comp
+    const fullUrl = window.location.href;
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('comp')) {
+        compString = urlParams.get('comp'); 
+    }
+    
     var compMgrResponse;
-    fetch('https://dance-comp-improver-5248baad7892.herokuapp.com/https://www.comp-mngr.com/silverball2023/SilverBall2023_HeatLists.htm', {
+    fetch('https://dance-comp-improver-5248baad7892.herokuapp.com/https://www.comp-mngr.com/' + compString.toLowerCase() + '/' + compString + '_HeatLists.htm', {
         //'https://dance-comp-improver-5248baad7892.herokuapp.com/https://www.comp-mngr.com/canamgala23/canamgala23_HeatLists.htm', {
         //'https://cors-anywhere.herokuapp.com/https://www.comp-mngr.com/northstar2023/NorthStar2023_HeatLists.htm', {
         method: 'GET',
